@@ -1,13 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+// import App from './App';
 
+import * as serviceWorker from './serviceWorker';
+//import AppKethopReactRedux from './Components/AppKethop.js';
+import { Provider } from 'react-redux'; // add Provider from redux
+//import store1 from './Components/Store'; // add store of redux
+
+import Firebase from './Firebase/AppFirebase.js';
+import storeFromFirebase from './Firebase/store';
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+  //   <AppKethopReactRedux />
+  // </React.StrictMode>,
+
+  // <Provider store={store1}>
+  //     <AppKethopReactRedux />
+  // </Provider>,
+
+  <Provider store={storeFromFirebase}>
+      <Firebase/>
+  </Provider>,
+
+
   document.getElementById('root')
 );
 
